@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  garden:
+    build: .
+    container_name: garden
+    volumes:
+      - ".:/garden"
+    command: sleep 43200
+    links:
+      - "chrome"
+
+  chrome:
+    image: selenium/standalone-chrome-debug:2.53.1
+    container_name: chrome
+    ports:
+      - 4444:4444
+      - 5900:5900
