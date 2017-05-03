@@ -4,8 +4,8 @@ services:
   garden:
     build: .
     container_name: garden
-    volumes:
-      - ".:/garden"
+#    volumes: #if uncomment need to have node 6.9 on host and install dependencies
+#      - ".:/garden"
     command: sleep 43200
     links:
       - "chrome"
